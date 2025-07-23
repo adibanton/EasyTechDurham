@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --background: hsl(28, 44%, 99%);
+  --foreground: hsl(0, 0%, 20%);
+  --muted: hsl(28, 20%, 95%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 20%);
+  --border: hsl(28, 20%, 90%);
+  --input: hsl(28, 20%, 90%);
+  --primary: hsl(209, 29%, 32%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --primary-light: hsl(209, 37%, 42%);
+  --secondary: hsl(28, 20%, 95%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --accent: hsl(177, 63%, 51%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --contrast: hsl(38, 92%, 50%);
+  --contrast-foreground: hsl(0, 0%, 98%);
+  --sand: hsl(28, 44%, 99%);
+  --charcoal: hsl(0, 0%, 20%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(209, 29%, 32%);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(209, 29%, 32%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --primary-light: hsl(209, 37%, 42%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(177, 63%, 51%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --contrast: hsl(38, 92%, 50%);
+  --contrast-foreground: hsl(0, 0%, 98%);
+  --sand: hsl(240, 10%, 4%);
+  --charcoal: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-[Poppins];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-[Nunito];
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: hsl(var(--primary));
+  }
+  
+  .text-primary-light {
+    color: hsl(var(--primary-light));
+  }
+  
+  .text-accent {
+    color: hsl(var(--accent));
+  }
+  
+  .text-contrast {
+    color: hsl(var(--contrast));
+  }
+  
+  .text-sand {
+    color: hsl(var(--sand));
+  }
+  
+  .text-charcoal {
+    color: hsl(var(--charcoal));
+  }
+  
+  .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+  
+  .bg-primary-light {
+    background-color: hsl(var(--primary-light));
+  }
+  
+  .bg-accent {
+    background-color: hsl(var(--accent));
+  }
+  
+  .bg-contrast {
+    background-color: hsl(var(--contrast));
+  }
+  
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+  
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+  
+  .border-primary {
+    border-color: hsl(var(--primary));
+  }
+  
+  .border-accent {
+    border-color: hsl(var(--accent));
+  }
+  
+  .border-contrast {
+    border-color: hsl(var(--contrast));
+  }
+  
+  .hover\:bg-primary:hover {
+    background-color: hsl(var(--primary));
+  }
+  
+  .hover\:bg-primary-light:hover {
+    background-color: hsl(var(--primary-light));
+  }
+  
+  .hover\:bg-accent:hover {
+    background-color: hsl(var(--accent));
+  }
+  
+  .hover\:bg-contrast:hover {
+    background-color: hsl(var(--contrast));
+  }
+  
+  .hover\:text-primary:hover {
+    color: hsl(var(--primary));
+  }
+  
+  .hover\:text-accent:hover {
+    color: hsl(var(--accent));
+  }
+}

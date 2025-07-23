@@ -80,7 +80,7 @@ export default function Home() {
           </p>
 
           {/* Hero Image - Large and Clean */}
-          <div className="bg-gray-100 rounded-2xl p-12 mb-16 h-96 flex items-center justify-center">
+          <div className="bg-gray-100 rounded-2xl p-12 mb-8 h-96 flex items-center justify-center">
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
               alt="Diverse group of middle-aged adults collaborating stress-free with technology" 
@@ -91,7 +91,7 @@ export default function Home() {
       </section>
 
       {/* Three Main Service Cards */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Smartphone Help */}
@@ -125,13 +125,56 @@ export default function Home() {
             {/* Tech Cleanup */}
             <div className="bg-gray-50 rounded-2xl p-8 text-center">
               <div className="w-24 h-24 bg-gray-200 rounded-xl mx-auto mb-6 flex items-center justify-center">
-                <Shield className="w-10 h-10 text-primary" />
+                <Fan className="w-10 h-10 text-primary" />
               </div>
               <h3 className="font-bold text-xl text-primary mb-4">Tech Cleanup Visit</h3>
               <p className="text-gray-600 mb-6">Optimizing slow devices, securing passwords, and organizing systems to reduce overwhelm.</p>
               <Link href="/services">
                 <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
                   Learn More
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Scam Recovery Special Section */}
+      <section className="bg-red-50 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-200">
+            <div className="flex justify-center mb-6">
+              <div className="w-24 h-24 bg-red-100 rounded-xl flex items-center justify-center">
+                <Shield className="w-12 h-12 text-red-600" />
+              </div>
+            </div>
+            <h2 className="font-bold text-3xl text-red-700 mb-4">Scam Recovery & Protection</h2>
+            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+              Been targeted by scammers or dealing with malware? We specialize in helping seniors recover from online scams and secure their devices and accounts.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-left">
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Malware removal & device cleanup</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Account security restoration</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Bank & credit card contact assistance</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Future scam prevention setup</span>
+              </div>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl font-bold text-red-700 mb-4">Starting at $149</p>
+              <Link href="/contact">
+                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-xl">
+                  Get Help Now
                 </Button>
               </Link>
             </div>
@@ -220,28 +263,28 @@ export default function Home() {
             </div>
 
             {/* First Visit Special */}
-            <div className="bg-primary text-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-contrast text-white rounded-2xl p-8 shadow-lg border-2 border-yellow-400">
               <div className="text-center mb-4">
-                <span className="bg-contrast text-primary px-3 py-1 rounded-full text-sm font-bold">💡 First Visit Special</span>
+                <span className="bg-white text-contrast px-3 py-1 rounded-full text-sm font-bold">💡 First Visit Special</span>
               </div>
-              <h3 className="font-bold text-2xl mb-2">$99</h3>
-              <p className="text-white/90 mb-6">Limited time offer</p>
-              <ul className="text-left text-white/90 space-y-3 mb-8">
+              <h3 className="font-bold text-2xl mb-2 text-white">$99</h3>
+              <p className="text-white mb-6 font-medium">Limited time offer</p>
+              <ul className="text-left text-white space-y-3 mb-8">
                 <li className="flex items-center">
-                  <Check className="w-5 h-5 text-accent mr-3" />
-                  Save $10 on your first visit
+                  <Check className="w-5 h-5 text-white mr-3" />
+                  <span className="text-white">Save $10 on your first visit</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="w-5 h-5 text-accent mr-3" />
-                  All regular services included
+                  <Check className="w-5 h-5 text-white mr-3" />
+                  <span className="text-white">All regular services included</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="w-5 h-5 text-accent mr-3" />
-                  Perfect way to try our service
+                  <Check className="w-5 h-5 text-white mr-3" />
+                  <span className="text-white">Perfect way to try our service</span>
                 </li>
               </ul>
               <Link href="/contact">
-                <Button className="w-full bg-contrast hover:bg-yellow-500 text-white font-semibold">
+                <Button className="w-full bg-white text-contrast hover:bg-gray-100 font-semibold border-2 border-white">
                   Claim Offer
                 </Button>
               </Link>
@@ -313,13 +356,13 @@ export default function Home() {
           <h2 className="font-bold text-4xl text-white mb-4">
             Ready to Make Tech Simple?
           </h2>
-          <p className="text-xl text-white/90 mb-12">
+          <p className="text-xl text-white mb-12">
             Book your friendly, in-person tech visit today
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link href="/contact">
-              <Button className="bg-contrast hover:bg-yellow-500 text-white px-8 py-4 text-lg font-semibold rounded-xl">
+              <Button className="bg-contrast hover:bg-yellow-500 text-white px-8 py-4 text-lg font-semibold rounded-xl border-2 border-contrast">
                 <Calendar className="mr-3 h-6 w-6" />
                 Book Your Visit Now
               </Button>
@@ -333,9 +376,9 @@ export default function Home() {
           </div>
           
           <div className="flex items-center justify-center">
-            <div className="bg-white/20 text-white px-6 py-3 rounded-lg flex items-center">
+            <div className="bg-white text-primary px-6 py-3 rounded-lg flex items-center border-2 border-white">
               <Shield className="mr-3 h-5 w-5" />
-              Safe, Secure, Local Service
+              <span className="font-medium">Safe, Secure, Local Service</span>
             </div>
           </div>
         </div>

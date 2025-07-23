@@ -12,7 +12,9 @@ import {
   Camera,
   GraduationCap,
   Users,
-  CheckCircle
+  CheckCircle,
+  Lock,
+  Calendar
 } from "lucide-react";
 
 export default function Services() {
@@ -65,34 +67,46 @@ export default function Services() {
 
   const additionalServices = [
     {
-      icon: Key,
+      icon: Lock,
       title: "Password Manager Setup",
-      description: "Secure password organization and management"
+      description: "Secure password storage and management for all your accounts",
+      price: "$89-$109"
     },
     {
       icon: Home,
       title: "Smart Home Device Setup", 
-      description: "Voice assistants, smart lights, and thermostats"
+      description: "Configuration of smart speakers, lights, and home automation",
+      price: "$89-$109"
     },
     {
       icon: Printer,
       title: "Printer Setup",
-      description: "Wireless printing and troubleshooting"
+      description: "Wireless printer installation and troubleshooting",
+      price: "$89-$109"
     },
     {
       icon: Camera,
       title: "Photo & Data Backup",
-      description: "Secure cloud storage and organization"
+      description: "Secure backup solutions for your precious memories and files",
+      price: "$89-$109"
     },
     {
       icon: GraduationCap,
       title: "1-on-1 Coaching",
-      description: "Personalized technology learning sessions"
+      description: "Personalized technology training sessions at your pace",
+      price: "$99/hr"
     },
     {
       icon: Users,
-      title: "Group Visits",
-      description: "Retirement home and community sessions"
+      title: "Group Visits to Retirement Homes",
+      description: "Technology workshops and support for senior communities",
+      price: "From $149"
+    },
+    {
+      icon: Calendar,
+      title: "Monthly Virtual Support Plans",
+      description: "Ongoing remote support and maintenance for your devices",
+      price: "Contact for pricing"
     }
   ];
 

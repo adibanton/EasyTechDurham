@@ -69,13 +69,34 @@ export default function Home() {
 
       {/* Quick Blurb */}
       <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-bold text-3xl sm:text-4xl text-primary mb-6">
-            Friendly, In-Person Tech Help Across Durham Region
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            We provide friendly, in-person tech help across Durham Region — tailored for anyone navigating smartphones, wi-fi issues or online scams and viruses.
-          </p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-bold text-4xl text-primary mb-6">
+                Friendly, In-Person Tech Help Across Durham Region
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                We provide friendly, in-person tech help across Durham Region — tailored for anyone navigating smartphones, wi-fi issues or online scams and viruses.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent mb-2">500+</div>
+                  <p className="text-gray-600">Happy Customers</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent mb-2">5★</div>
+                  <p className="text-gray-600">Average Rating</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                alt="Senior man successfully using smartphone with confidence" 
+                className="rounded-2xl shadow-xl w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -123,10 +144,10 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              {/* Happy family using technology together */}
+              {/* Seniors and family using technology together */}
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Multi-generational family enjoying technology together" 
+                src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                alt="Senior woman learning to use tablet with family support" 
                 className="rounded-2xl shadow-xl w-full h-auto"
               />
             </div>
@@ -147,7 +168,7 @@ export default function Home() {
             <div className="flex items-center justify-center space-x-4">
               <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                  src="https://images.unsplash.com/photo-1594824672903-2b3d2be3d4fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
                   alt="Margaret Thompson" 
                   className="w-16 h-16 rounded-full object-cover"
                 />

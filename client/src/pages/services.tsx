@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
-import ServiceCard from "@/components/service-card";
+import ServiceSelection from "@/components/service-selection";
+import { Card, CardContent } from "@/components/ui/card";
 import { 
   Smartphone, 
   Wifi, 
@@ -10,7 +11,8 @@ import {
   Printer,
   Camera,
   GraduationCap,
-  Users
+  Users,
+  CheckCircle
 } from "lucide-react";
 
 export default function Services() {
@@ -101,55 +103,84 @@ export default function Services() {
         <meta name="description" content="Comprehensive tech support services including smartphone help, Wi-Fi setup, device cleanup, and scam recovery for Durham Region residents." />
       </Helmet>
 
-      <section className="py-20 bg-sand min-h-screen">
+      <section className="py-20 bg-white min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="font-bold text-5xl text-primary mb-6">Our Services</h1>
             <p className="text-2xl text-gray-600 mb-8">Perfect for beginners, seniors, or anyone needing a tech refresh</p>
           </div>
 
-          {/* Core Services Detailed */}
-          <div className="mb-20">
-            <h2 className="font-bold text-3xl text-primary mb-12 text-center">Core Services</h2>
+          {/* Service Selection */}
+          <ServiceSelection />
+
+          {/* What's Included Section */}
+          <div className="mt-20 bg-sand rounded-2xl p-12">
+            <h2 className="font-bold text-3xl text-primary mb-12 text-center">What's Included in Every Visit</h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {coreServices.map((service, index) => (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-6">
-                    <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
-                      <service.icon className="w-8 h-8 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-2xl text-primary mb-4">{service.title}</h3>
-                      <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="text-gray-600 space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-accent" />
                 </div>
-              ))}
+                <h3 className="font-semibold text-lg text-primary mb-2">Patient Explanation</h3>
+                <p className="text-gray-600">We take time to explain everything clearly</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Hands-On Learning</h3>
+                <p className="text-gray-600">Practice together until you're comfortable</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Written Notes</h3>
+                <p className="text-gray-600">Simple instructions you can reference later</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Follow-Up Support</h3>
+                <p className="text-gray-600">Email or call if you have questions later</p>
+              </div>
             </div>
           </div>
 
-          {/* Additional Services */}
-          <div className="bg-white rounded-2xl p-12 shadow-lg">
-            <h2 className="font-bold text-3xl text-primary mb-8 text-center">Additional Services</h2>
+          {/* Detailed Service Descriptions */}
+          <div className="mt-20">
+            <h2 className="font-bold text-3xl text-primary mb-12 text-center">Detailed Service Information</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {additionalServices.map((service, index) => (
-                <div key={index} className="text-center p-6 rounded-xl bg-sand hover:bg-accent/10 transition-all duration-300">
-                  <service.icon className="w-12 h-12 text-accent mb-4 mx-auto" />
-                  <h3 className="font-semibold text-lg text-primary mb-2">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {coreServices.map((service, index) => (
+                <Card key={index} className="shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="flex items-start space-x-6">
+                      <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
+                        <service.icon className="w-8 h-8 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-2xl text-primary mb-4">{service.title}</h3>
+                        <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                          {service.description}
+                        </p>
+                        <ul className="text-gray-600 space-y-2">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center">
+                              <CheckCircle className="w-4 h-4 text-accent mr-3 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>

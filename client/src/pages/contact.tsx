@@ -74,19 +74,37 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="font-bold text-5xl text-primary mb-6">Get In Touch</h1>
-            <p className="text-2xl text-gray-600">Ready to make tech simple? Let's chat!</p>
+            <p className="text-2xl text-gray-600 mb-8">Ready to make tech simple? Let's chat!</p>
+            
+            {/* Quick Contact Options */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-colors">
+                <Phone className="w-8 h-8 text-accent mb-3 mx-auto" />
+                <h3 className="font-bold text-lg text-primary mb-2">Call Us Now</h3>
+                <p className="text-2xl font-bold text-primary">(905) 555-EASY</p>
+                <p className="text-sm text-gray-500">Mon-Sat 9am-6pm</p>
+              </div>
+              
+              <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-colors">
+                <Mail className="w-8 h-8 text-accent mb-3 mx-auto" />
+                <h3 className="font-bold text-lg text-primary mb-2">Email Us</h3>
+                <p className="text-lg font-bold text-primary">hello@easytechdurham.ca</p>
+                <p className="text-sm text-gray-500">We respond within 24 hours</p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <Card className="shadow-lg">
               <CardContent className="p-8">
-                <h2 className="font-bold text-3xl text-primary mb-8">Send Us a Message</h2>
+                <h2 className="font-bold text-3xl text-primary mb-4">Send Us a Message</h2>
+                <p className="text-gray-600 mb-8 text-lg">Fill out this form and we'll get back to you within 24 hours</p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
-                      Your Name
+                    <label htmlFor="name" className="block text-lg font-semibold text-primary mb-3">
+                      Your Name *
                     </label>
                     <Input
                       id="name"
@@ -95,14 +113,14 @@ export default function Contact() {
                       placeholder="Enter your full name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="text-lg py-4 border-2 focus:border-accent"
+                      className="text-xl py-6 border-2 focus:border-accent rounded-lg"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-                      Email Address
+                    <label htmlFor="email" className="block text-lg font-semibold text-primary mb-3">
+                      Email Address *
                     </label>
                     <Input
                       id="email"
@@ -111,38 +129,38 @@ export default function Contact() {
                       placeholder="your@email.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="text-lg py-4 border-2 focus:border-accent"
+                      className="text-xl py-6 border-2 focus:border-accent rounded-lg"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-                      Phone Number
+                    <label htmlFor="phone" className="block text-lg font-semibold text-primary mb-3">
+                      Phone Number (Optional)
                     </label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="(416) 555-0123"
+                      placeholder="(905) 555-0123"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="text-lg py-4 border-2 focus:border-accent"
+                      className="text-xl py-6 border-2 focus:border-accent rounded-lg"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-                      How Can We Help?
+                    <label htmlFor="message" className="block text-lg font-semibold text-primary mb-3">
+                      How Can We Help? *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
-                      rows={5}
+                      rows={6}
                       placeholder="Tell us about your tech challenge or what you'd like help with..."
                       value={formData.message}
                       onChange={handleChange}
-                      className="text-lg py-4 border-2 focus:border-accent resize-none"
+                      className="text-xl py-4 border-2 focus:border-accent resize-none rounded-lg"
                       required
                     />
                   </div>
@@ -150,18 +168,18 @@ export default function Contact() {
                   <Button 
                     type="submit"
                     disabled={contactMutation.isPending}
-                    className="w-full bg-contrast hover:bg-yellow-500 text-white px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    className="w-full bg-contrast hover:bg-yellow-500 text-white px-8 py-6 text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg rounded-lg"
                   >
                     {contactMutation.isPending ? (
-                      <>Processing...</>
+                      <>Processing Your Message...</>
                     ) : contactMutation.isSuccess ? (
                       <>
-                        <Check className="mr-2 h-5 w-5" />
-                        Message Sent!
+                        <Check className="mr-3 h-6 w-6" />
+                        Message Sent Successfully!
                       </>
                     ) : (
                       <>
-                        <Send className="mr-2 h-5 w-5" />
+                        <Send className="mr-3 h-6 w-6" />
                         Send Message
                       </>
                     )}
@@ -208,7 +226,7 @@ export default function Contact() {
                 <CardContent className="p-8 text-center">
                   <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <img 
-                      src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
                       alt="Friendly tech support professional" 
                       className="w-16 h-16 rounded-full object-cover"
                     />

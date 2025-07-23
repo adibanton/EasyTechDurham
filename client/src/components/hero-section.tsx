@@ -9,8 +9,8 @@ export default function HeroSection() {
       <div className="bg-gradient-to-r from-primary/90 to-primary-light/80 relative">
         {/* Lifestyle image showing comfortable tech use */}
         <img 
-          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&h=1000" 
-          alt="Senior woman smiling while video calling family on tablet" 
+          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&h=1000" 
+          alt="Diverse group including seniors learning technology together" 
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         

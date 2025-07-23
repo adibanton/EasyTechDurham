@@ -10,7 +10,7 @@ export default function HeroSection() {
         {/* Lifestyle image showing comfortable tech use */}
         <img 
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&h=1000" 
-          alt="Diverse group of middle-aged adults collaborating stress-free with technology" 
+          alt="people using tech" 
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         

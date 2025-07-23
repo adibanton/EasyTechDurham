@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import easytechLogo from "@assets/EasyTech Durham_1753297004316.png";
+import easytechLogo from "@assets/ETD Logo - Icon Only.png";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,18 +22,16 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-3">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="flex items-center space-x-2">
             <img 
               src={easytechLogo} 
               alt="EasyTech Durham Logo" 
-              className="w-12 h-12"
+              className="w-8 h-8"
             />
-            <div>
-              <h1 className="font-bold text-xl text-primary">EasyTech Durham</h1>
-            </div>
+            <span className="font-bold text-lg text-primary">EasyTech Durham</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -42,18 +40,20 @@ export default function Navigation() {
               <Link 
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors duration-200 ${
+                className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(link.href) 
-                    ? "text-accent" 
-                    : "text-charcoal hover:text-primary"
+                    ? "text-primary" 
+                    : "text-gray-600 hover:text-primary"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Button className="bg-contrast hover:bg-yellow-500 text-white font-semibold transition-all duration-200 transform hover:scale-105">
-              Book Now
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-primary hover:bg-primary-light text-white text-sm font-medium px-4 py-2 rounded-lg">
+                Book Now
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -73,25 +73,27 @@ export default function Navigation() {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t bg-white">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden border-t border-gray-100 bg-white">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <Link 
                   key={link.href}
                   href={link.href}
-                  className={`block px-3 py-2 font-medium ${
+                  className={`block px-3 py-3 text-sm font-medium ${
                     isActive(link.href) 
-                      ? "text-accent" 
-                      : "text-charcoal hover:text-primary"
+                      ? "text-primary" 
+                      : "text-gray-600 hover:text-primary"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button className="w-full mt-2 bg-contrast hover:bg-yellow-500 text-white font-semibold">
-                Book Now
-              </Button>
+              <Link href="/contact">
+                <Button className="w-full mt-4 bg-primary hover:bg-primary-light text-white font-medium rounded-lg">
+                  Book Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}

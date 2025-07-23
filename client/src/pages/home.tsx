@@ -64,144 +64,155 @@ export default function Home() {
         <meta name="description" content="Friendly, in-person tech help across Durham Region for seniors, families, and anyone overwhelmed by modern devices." />
       </Helmet>
 
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Quick Blurb */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-bold text-4xl text-primary mb-6">
-                Friendly, In-Person Tech Help Across Durham Region
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                We provide friendly, in-person tech help across Durham Region — tailored for anyone navigating smartphones, wi-fi issues or online scams and viruses.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">500+</div>
-                  <p className="text-gray-600">Happy Customers</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">5★</div>
-                  <p className="text-gray-600">Average Rating</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Senior man successfully using smartphone with confidence" 
-                className="rounded-2xl shadow-xl w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Services Snapshot */}
-      <section className="bg-sand py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-bold text-4xl text-primary mb-4">Our Core Services</h2>
-            <p className="text-xl text-gray-600">Expert help delivered with patience and care</p>
-          </div>
+      {/* Hero Section - Clean and Minimal */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-bold text-5xl sm:text-6xl lg:text-7xl text-primary mb-8 leading-tight">
+            Support made easy.
+          </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreServices.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
-            ))}
+          {/* Hero Image - Large and Clean */}
+          <div className="bg-gray-100 rounded-2xl p-12 mb-16 h-96 flex items-center justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+              alt="Diverse group of middle-aged adults collaborating stress-free with technology" 
+              className="rounded-xl max-h-full max-w-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Three Main Service Cards */}
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-bold text-4xl text-primary mb-8">Why Choose EasyTech Durham?</h2>
-              
-              <div className="space-y-6">
-                {whyChooseUs.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-accent/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg text-primary mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Smartphone Help */}
+            <div className="bg-gray-50 rounded-2xl p-8 text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-xl mx-auto mb-6 flex items-center justify-center">
+                <Smartphone className="w-10 h-10 text-primary" />
               </div>
+              <h3 className="font-bold text-xl text-primary mb-4">In-Person Setup</h3>
+              <p className="text-gray-600 mb-6">We come to you for patient, hands-on smartphone and device setup.</p>
+              <Link href="/services">
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                  Learn More
+                </Button>
+              </Link>
             </div>
-            
-            <div className="relative">
-              {/* Seniors and family using technology together */}
-              <img 
-                src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Senior woman learning to use tablet with family support" 
-                className="rounded-2xl shadow-xl w-full h-auto"
-              />
+
+            {/* Tech Cleanup */}
+            <div className="bg-gray-50 rounded-2xl p-8 text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-xl mx-auto mb-6 flex items-center justify-center">
+                <Fan className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-bold text-xl text-primary mb-4">Device Cleanup</h3>
+              <p className="text-gray-600 mb-6">Speed up slow devices and organize your digital life securely.</p>
+              <Link href="/services">
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                  Learn More
+                </Button>
+              </Link>
+            </div>
+
+            {/* Scam Recovery */}
+            <div className="bg-gray-50 rounded-2xl p-8 text-center">
+              <div className="w-24 h-24 bg-gray-200 rounded-xl mx-auto mb-6 flex items-center justify-center">
+                <Shield className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-bold text-xl text-primary mb-4">Virus and Scam Recovery</h3>
+              <p className="text-gray-600 mb-6">Remove malware and secure your accounts after scam attempts.</p>
+              <Link href="/services">
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="bg-primary py-20">
+      {/* Pricing Section */}
+      <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white rounded-2xl p-12 shadow-xl">
-            <div className="mb-8">
-              <Quote className="w-16 h-16 text-accent mb-6 mx-auto" />
-              <p className="text-2xl text-gray-700 leading-relaxed mb-8 font-medium">
-                "John from EasyTech Durham was so patient with me. He helped set up my new tablet and showed me how to video call my grandchildren. Now I feel confident using it on my own!"
-              </p>
+          <h2 className="font-bold text-4xl text-primary mb-4">Pricing</h2>
+          <p className="text-xl text-gray-600 mb-16">Simple, transparent rates.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Regular Services */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="font-bold text-2xl text-primary mb-2">$109</h3>
+              <p className="text-gray-600 mb-6">Most services</p>
+              <ul className="text-left text-gray-600 space-y-3 mb-8">
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  Smartphone setup & training
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  Wi-Fi & TV troubleshooting
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  Device cleanup & optimization
+                </li>
+              </ul>
+              <Link href="/contact">
+                <Button className="w-full bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white">
+                  Book Service
+                </Button>
+              </Link>
             </div>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1594824672903-2b3d2be3d4fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
-                  alt="Margaret Thompson" 
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-semibold text-xl text-primary">Margaret Thompson</h4>
-                <p className="text-gray-600">Ajax Resident</p>
-              </div>
+
+            {/* Scam Recovery */}
+            <div className="bg-primary text-white rounded-2xl p-8 shadow-lg">
+              <h3 className="font-bold text-2xl mb-2">20% off</h3>
+              <p className="text-white/90 mb-6">First visit special</p>
+              <ul className="text-left text-white/90 space-y-3 mb-8">
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  Just $99 for your first service
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  All regular services included
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-5 h-5 text-accent mr-3" />
+                  Limited time offer
+                </li>
+              </ul>
+              <Link href="/contact">
+                <Button className="w-full bg-contrast hover:bg-yellow-500 text-white font-semibold">
+                  Claim Offer
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="bg-contrast py-16">
+      {/* Final CTA Section */}
+      <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-bold text-4xl text-white mb-4">
-            Ready to Make Tech Simple?
+          <h2 className="font-bold text-4xl text-primary mb-4">
+            Need patient, local help? Let's chat.
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Book your friendly, in-person tech visit today
+          <p className="text-xl text-gray-600 mb-12">
+            We're here to make technology work for you, not against you.
           </p>
-          <Link href="/contact">
-            <Button className="bg-white text-contrast hover:bg-gray-100 px-10 py-4 text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-              <Calendar className="mr-3 h-6 w-6" />
-              Book Your Visit Now
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button className="bg-primary hover:bg-primary-light text-white px-8 py-4 text-lg font-semibold rounded-xl">
+                Get Started
+              </Button>
+            </Link>
+            <Button 
+              variant="outline" 
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold rounded-xl"
+            >
+              Call (905) 555-EASY
             </Button>
-          </Link>
-          <div className="mt-6">
-            <span className="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-lg">
-              <Shield className="mr-2 h-5 w-5" />
-              Safe, Secure, Local Service
-            </span>
           </div>
         </div>
       </section>
